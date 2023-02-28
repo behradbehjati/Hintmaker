@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary  ">
+  <div class="container-fluid ">
+
+    <div class=" navbar-collapse  justify-content-center" id="navbarSupportedContent">
+        <a class="navbar-brand justify-content-center" href="#">Pasmoji</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{%url 'hintmaker:home'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'hintmaker:hintmaker'%}">Make a hint</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            {%if not request.user.is_authenticated%}
+            <li><a class="dropdown-item" href="{%url 'accounts:register'%}">Register</a></li>
+            <li><a class="dropdown-item" href="{%url 'accounts:login'%}">Login</a></li>
+            {%else%}
+            <li><a class="dropdown-item" href="{%url 'accounts:logout'%}">Logout</a></li>
+            <li><a class="dropdown-item" href="{%url 'accounts:profile'%}">Profile</a></li>
+            {%endif%}
+          </ul>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

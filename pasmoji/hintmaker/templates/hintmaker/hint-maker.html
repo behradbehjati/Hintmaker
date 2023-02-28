@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block extraheaders %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.css">
+
+{%endblock%}
+{%block content%}
+<div class=" d-flex justify-content-center">
+<form class="mt-8 space-y-6 " action="" method="POST" novalidate>
+     {%csrf_token%}
+     {{form.as_p}}
+
+
+
+
+      <div>
+        <button type="submit" class="btn-success">
+          Save
+        </button>
+      </div>
+    </form>
+    </div>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.js"></script>
+<script src="{% static '/js/script.js' %}" ></script>
+
+{%endblock%}

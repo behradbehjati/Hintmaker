@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block extraheaders %}
+
+
+
+
+{%endblock%}
+{%block content%}
+ <button type="submit" class="btn-success">
+          <a href="{%url 'accounts:profile_edit'%}">Edit Profile</a>
+        </button>
+<div class=" d-flex justify-content-center">
+    {% for hint in hints%}
+
+<div class="card" style="width: 18rem;">
+
+
+
+
+  <div class="card-body">
+    <h5 class="card-title">{{hint.site_name}}</h5>
+    <p class="card-text">content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{hint.password_type}}</li>
+    <li class="list-group-item">{{hint.hint}}</li>
+
+  </ul>
+  <div class="card-body">
+    <a href="{%url 'hintmaker:edit' hint.id%}" class="card-link">Edit</a>
+
+  </div>
+</div>
+  {%endfor%}
+    </div>
+
+{%endblock content%}
+

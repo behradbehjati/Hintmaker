@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block extraheaders %}
+
+
+
+
+{%endblock%}
+{%block content%}
+<div class=" d-flex justify-content-center">
+<form class="mt-8 space-y-6 " action="" method="POST" novalidate>
+     {%csrf_token%}
+     {{form.as_p}}
+
+
+ <button type="submit" class="btn-success">
+          <a href="{%url 'accounts:login'%}">sign in</a>
+        </button>
+
+      <div>
+        <button type="submit" class="btn-success">
+          register
+        </button>
+      </div>
+    </form>
+    </div>
+{%endblock content%}
+
